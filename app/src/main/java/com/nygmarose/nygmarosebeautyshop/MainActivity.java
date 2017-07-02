@@ -1,6 +1,5 @@
 package com.nygmarose.nygmarosebeautyshop;
 
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Activity;
@@ -8,9 +7,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -27,13 +24,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ImageView splashH = (ImageView) findViewById(R.id.splash_horizontal);
         ImageView splashV = (ImageView) findViewById(R.id.splash_vertical);
-        // Subscribe to default topic for mass messaging with HTTP send requests
         // Set Orientation Splash
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            //If portrait, only display portrait
+            //If portrait, only display portrait splash
             splashH.setVisibility(imageView.GONE);
         } else {
-            //If horizontal, only display horizontal
+            //If horizontal, only display horizontal splash
             splashV.setVisibility(imageView.GONE);
         }
         // Create swipe container for swipe to refresh and WebView client + settings
@@ -50,6 +46,7 @@ public class MainActivity extends Activity {
                     }
                 }
         );
+        // Subscribe to default topic for mass messaging with HTTP send requests
         FirebaseMessaging.getInstance().subscribeToTopic("all");
     }
 
@@ -70,7 +67,6 @@ public class MainActivity extends Activity {
             ImageView splashV = (ImageView) findViewById(R.id.splash_vertical);
             splashV.setVisibility(imageView.GONE);
             splashH.setVisibility(imageView.GONE);
-            //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
             mySwipeRefreshLayout.setRefreshing(false);
         }
 
