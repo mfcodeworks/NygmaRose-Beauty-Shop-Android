@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "578400075747",
+    "firebase_url": "https://nygmarose-beauty-shop.firebaseio.com",
+    "project_id": "nygmarose-beauty-shop",
+    "storage_bucket": "nygmarose-beauty-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578400075747:android:ace9bcad4e8043b4",
+        "android_client_info": {
+          "package_name": "com.nygmarose.nygmarosebeautyshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578400075747-bqkutdk5btupabii6h36v9ifrndev344.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nygmarose.nygmarosebeautyshop",
+            "certificate_hash": "2ab45e22ee2dadaeb6196c6d6249acaf6028521a"
+          }
+        },
+        {
+          "client_id": "578400075747-iepep34jufvpcq75l9u42dpdnc79l5tb.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "578400075747-8900gnpqrnqkq6j1h06hknms13rg36o0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6QeAzz0QI0IqFuIuXwgMgWdupFnKefwU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
