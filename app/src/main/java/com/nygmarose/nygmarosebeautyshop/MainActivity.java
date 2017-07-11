@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -27,10 +28,10 @@ public class MainActivity extends Activity {
         // Set Orientation Splash
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             //If portrait, only display portrait splash
-            splashH.setVisibility(imageView.GONE);
+            splashH.setVisibility(View.GONE);
         } else {
             //If horizontal, only display horizontal splash
-            splashV.setVisibility(imageView.GONE);
+            splashV.setVisibility(View.GONE);
         }
         // Create swipe container for swipe to refresh and WebView client + settings
         mySwipeRefreshLayout = (SwipeRefreshLayout)this.findViewById(R.id.swipeContainer);
@@ -65,8 +66,8 @@ public class MainActivity extends Activity {
 
             ImageView splashH = (ImageView) findViewById(R.id.splash_horizontal);
             ImageView splashV = (ImageView) findViewById(R.id.splash_vertical);
-            splashV.setVisibility(imageView.GONE);
-            splashH.setVisibility(imageView.GONE);
+            splashV.setVisibility(View.GONE);
+            splashH.setVisibility(View.GONE);
             mySwipeRefreshLayout.setRefreshing(false);
         }
 
