@@ -17,7 +17,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 public class MainActivity extends Activity {
     private WebView mWebView;
     SwipeRefreshLayout mySwipeRefreshLayout;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

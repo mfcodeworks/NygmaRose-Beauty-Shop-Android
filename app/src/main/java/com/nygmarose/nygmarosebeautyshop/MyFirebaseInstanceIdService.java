@@ -20,6 +20,5 @@ public class MyFirebaseInstanceIdService extends FirebaseInstanceIdService {
         sendRegistrationToServer();
     }
     public void sendRegistrationToServer() {
-        FirebaseMessaging.getInstance().subscribeToTopic("all");
     }
 }
