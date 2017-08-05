@@ -22,8 +22,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageView splashH = (ImageView) findViewById(R.id.splash_horizontal);
-        ImageView splashV = (ImageView) findViewById(R.id.splash_vertical);
+        ImageView splashH = findViewById(R.id.splash_horizontal);
+        ImageView splashV = findViewById(R.id.splash_vertical);
         // Set Orientation Splash
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             //If portrait, only display portrait splash
@@ -33,8 +33,8 @@ public class MainActivity extends Activity {
             splashV.setVisibility(View.GONE);
         }
         // Create swipe container for swipe to refresh and WebView client + settings
-        mySwipeRefreshLayout = (SwipeRefreshLayout)this.findViewById(R.id.swipeContainer);
-        mWebView = (WebView) this.findViewById(R.id.activity_main_webview);
+        mySwipeRefreshLayout = this.findViewById(R.id.swipeContainer);
+        mWebView = this.findViewById(R.id.activity_main_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new ShopWebViewClient());
         mWebView.loadUrl("https://shop.nygmarose.com");
@@ -50,6 +50,13 @@ public class MainActivity extends Activity {
         FirebaseMessaging.getInstance().subscribeToTopic("all");
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        String web = mWebView.getUrl();
+        mWebView.loadUrl(web);
+    }
+
     private class ShopWebViewClient extends WebViewClient{
 
 
@@ -63,8 +70,8 @@ public class MainActivity extends Activity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
 
-            ImageView splashH = (ImageView) findViewById(R.id.splash_horizontal);
-            ImageView splashV = (ImageView) findViewById(R.id.splash_vertical);
+            ImageView splashH = findViewById(R.id.splash_horizontal);
+            ImageView splashV = findViewById(R.id.splash_vertical);
             splashV.setVisibility(View.GONE);
             splashH.setVisibility(View.GONE);
             mySwipeRefreshLayout.setRefreshing(false);
