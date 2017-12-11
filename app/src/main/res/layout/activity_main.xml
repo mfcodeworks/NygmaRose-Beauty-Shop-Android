@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash1280x800"
-        android:contentDescription="Horizontal NygmaRose Beauty Splash Screen">
+        android:contentDescription="@string/layout_description">
     </ImageView>
 
     <ImageView
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash800x1280"
-        android:contentDescription="Vertical NygmaRose Beauty Splash Screen">
+        android:contentDescription="@string/layout_description">
     </ImageView>
 
 </RelativeLayout>

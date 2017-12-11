@@ -1,5 +1,6 @@
 package com.nygmarose.nygmarosebeautyshop;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Activity;
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
     private WebView mWebView;
     SwipeRefreshLayout mySwipeRefreshLayout;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class MainActivity extends Activity {
         mWebView = this.findViewById(R.id.activity_main_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new ShopWebViewClient());
-        mWebView.loadUrl("https://shop.nygmarose.com");
+        mWebView.loadUrl("@string/url");
         mySwipeRefreshLayout.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
                     @Override

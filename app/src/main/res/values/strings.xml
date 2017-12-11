@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NygmaRose Beauty Shop</string>
+    <string name="url">https://nygmarose.com</string>
+    <string name="layout_description">NygmaRose Beauty Splash Screen</string>
 </resources>
