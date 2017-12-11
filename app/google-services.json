@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "578400075747-6v2f4cq5ib2tshg27kuc9f4i5j1e7rbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nygmarose.nygmarosebeautyshop",
+            "certificate_hash": "2d6724cd6ece27b2989482bbadd2ec74918a98a0"
+          }
+        },
+        {
           "client_id": "578400075747-bqkutdk5btupabii6h36v9ifrndev344.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -8,12 +8,15 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity {
     private WebView mWebView;
@@ -39,7 +42,7 @@ public class MainActivity extends Activity {
         mWebView = this.findViewById(R.id.activity_main_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new ShopWebViewClient());
-        mWebView.loadUrl("@string/url");
+        mWebView.loadUrl(getString(R.string.url));
         mySwipeRefreshLayout.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
                     @Override
@@ -64,6 +67,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            Log.d(TAG, "Page loaded: " + url);
             super.onPageStarted(view, url, favicon);
             mySwipeRefreshLayout.setRefreshing(true);
         }

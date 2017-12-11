@@ -15,17 +15,25 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
 
         // Log Message Received
-        Log.d(TAG, "onMessageReceived: " + remoteMessage.getData().toString());
-        Log.d(TAG, "From " + remoteMessage.getFrom());
-        Log.d(TAG, "Body " + remoteMessage.getNotification().getBody());
+        Log.d(TAG, "From: " + remoteMessage.getFrom());
 
-        // Build foreground notification
-        Notification.Builder mBuilder = new Notification.Builder(this);
-        mBuilder.setSmallIcon(R.drawable.ic_notification);
-        if (remoteMessage.getNotification().getTitle().isEmpty()) mBuilder.setContentTitle("@string/app_name");
-        else mBuilder.setContentTitle(remoteMessage.getNotification().getTitle());
-        mBuilder.setContentText(remoteMessage.getNotification().getBody());
-        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        manager.notify(0, mBuilder.build());
+        // Check if message contains a data payload.
+        if (remoteMessage.getData().size() > 0)
+            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+
+        // Check if message contains a notification payload.
+        if (remoteMessage.getNotification() != null) {
+            Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+
+            // Build foreground notification
+            Notification.Builder mBuilder;
+            mBuilder = new Notification.Builder(this);
+            mBuilder.setSmallIcon(R.drawable.ic_notification);
+            if (remoteMessage.getNotification().getTitle().isEmpty()) mBuilder.setContentTitle("@string/app_name");
+            else mBuilder.setContentTitle(remoteMessage.getNotification().getTitle());
+            mBuilder.setContentText(remoteMessage.getNotification().getBody());
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            manager.notify(0, mBuilder.build());
+        }
     }
 }
